@@ -3,8 +3,23 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [tailwindcss(), reactRouter()],
+  plugins: [
+    tailwindcss(),
+    reactRouter(),
+  ],
+
   resolve: {
     tsconfigPaths: true,
+  },
+
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://course-vedio-production.up.railway.app",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path,
+      },
+    },
   },
 });
