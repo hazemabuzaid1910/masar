@@ -1,6 +1,11 @@
 {
     "rewrites": [{
-        "source": "/api/:path*",
-        "destination": "https://course-vedio-production.up.railway.app/api/:path*"
-    }]
+            "source": "/api/:path*",
+            "destination": "https://course-vedio-production.up.railway.app/api/:path*"
+        },
+        {
+            "source": "/admin/:path*",
+            "destination": "https://course-vedio-production.up.railway.app/api/admin/:path*"
+        }
+    ]
 }
